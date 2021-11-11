@@ -117,7 +117,7 @@ void smooth_curve() {
 // turn left: gYn positive/increase; turn right: gYn negative/decrease
 // results: turn left = -1, turn right = 1
 void detect_position() {
-  if (gYn > 40.0 || gYn < -40.0) {
+  if (gYn > 35.0 || gYn < -35.0) {
     if (positionFlag == 0) {
       positionFlag = 1;
       positionStatus = 0;
@@ -127,10 +127,7 @@ void detect_position() {
       Serial.print("Detection start. ");
     }
   }
-  if (positionFlag == 0) {
-    Serial.println(0);
-  }
-  else if (positionFlag == 1) {
+  if (positionFlag == 1) {
     if (gYn > gYn_1 && rightCount == 0)
       leftCount = leftCount + 1;
     else if (gYn < gYn_1 && leftCount == 0)
