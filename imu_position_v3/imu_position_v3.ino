@@ -45,7 +45,7 @@ void setup() {
 
 void loop() {
   currTime = millis();
-  if (currTime - prevTime >= 25) {
+  if (currTime - prevTime >= 25) { //40hz for faster detection
     read_IMU();
     smooth_curve();
     detect_position();
@@ -102,7 +102,7 @@ void read_IMU() {
   //  Serial.print(aY); Serial.print(" ");
   //  Serial.print(aZ); Serial.print(" ");
   //  Serial.print(gX); Serial.print(" ");
-  //  Serial.print(gY); //Serial.print(" ");
+  //  Serial.print(gY); Serial.print(" ");
   //  Serial.println(gZ);
 }
 
